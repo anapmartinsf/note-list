@@ -1,0 +1,187 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  border-bottom: 1px solid #ccc;
+  gap: 5rem;
+}
+
+.logo-container {
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+  font-size: 2rem;
+}
+
+.bi-journals {
+  color: #FFBB33;
+}
+
+h1 {
+  color: #2d2d2d;
+  font-size: 1.5rem;
+}
+
+#search-container {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+#search-container input {
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  height: 2rem;
+  width: 20rem;
+  border-radius: 9px;
+  padding: 1rem;
+  outline: none;
+}
+
+#export-notes {
+  background-color: #FFBB33;
+  border-radius: 9px;
+  border: 1px solid #ccc;
+  padding: .5rem;
+  color: #2d2d2d;
+  cursor: pointer;
+  transition: .5s;
+}
+
+#export-notes:hover {
+  opacity: .8;
+}
+
+#add-note-container {
+  display: flex;
+  width: 400px;
+  margin: 1rem auto 0;
+  gap : 1rem;
+}
+
+#add-note-container input,
+#add-note-container button {
+  padding: .3rem .8rem;
+  border-radius: 9px;
+  outline: none;
+}
+
+#add-note-container input {
+  flex: 1; 
+  border: 1px solid #ccc;
+}
+
+#add-note-container button {
+  background-color: #FFBB33;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  transition: .5s;
+}
+
+.bi-plus {
+  font-size: 1.2rem;
+}
+
+#add-note-container button:hover {
+    opacity: .8;
+}
+
+#notes-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 250px);
+  padding: 4rem;
+  gap: 2rem;
+}
+
+.note {
+  min-height: 12.5rem;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  background-color:#FFF9C4;
+  border-radius: 9px;
+  position: relative;
+}
+
+.note textarea {
+  background-color: transparent;
+  resize: none;
+  border: none;
+  outline: none;
+  height: 100%;
+}
+
+.note .bi-pin-angle {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.note:hover > i {
+  opacity: 1;
+}
+
+.bi-x-lg,
+.bi-copy {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: .9rem;
+  padding: 5px;
+  transition: .5s;
+  color: #000000;
+  cursor: pointer;
+  opacity: 0; 
+}
+
+.bi-x-lg {
+  top: 40px;
+}
+
+.note .bi-x-lg:hover,
+.note .bi-copy:hover {
+ opacity:.5;
+}
+
+.note.fixed {
+  background-color: #FFBB33; 
+}
+
+@media(max-width: 450px) {
+  header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  #search-container {
+    width: 100%;
+  }
+  
+  #search-input {
+    width: 100%;
+  }
+
+  #add-note-container {
+    width: 100%;
+    padding: 1rem 2rem;
+  }
+
+  #notes-container {
+    grid-template-columns: repeat(auto-fill, 100%);
+    padding-top: 1rem;
+  }
+}
